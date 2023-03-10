@@ -1,7 +1,7 @@
 # DuplicateFileLocator
 This project allows for the user to search for files which are duplicated on their system and decide to delete them or leave them alone.
 
-##Application's terminal usage:
+## Application's terminal usage:
 ```
 Usage: java -jar <jarName.jar> [-options]
 where options include:
