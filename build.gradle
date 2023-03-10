@@ -62,8 +62,12 @@ jar {
 
 publishing {
     publications {
-        myLibrary(MavenPublication) {
-            from layout.buildDirectory.dir("libs")
+        maven(MavenPublication) {
+            groupId = 'com.firebirdcss.tool'
+            artifactId = 'DuplicateFileLocator'
+            version  = appVersion
+            
+            from components.java
         }
     }
     
