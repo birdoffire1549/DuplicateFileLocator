@@ -29,18 +29,15 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
-    - name: Build with Gradle
-      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-      with:
-        gradle-version: 6.0
-        arguments: build
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+      
+    - name: Build with Gradlew
+      run: ./gradlew build
 
-    # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
+    # The GITHUB_TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
     - name: Publish to GitHub Packages
-      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-      with:
-        gradle-version: 6.0
-        arguments: publish
+      run: ./gradlew publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
