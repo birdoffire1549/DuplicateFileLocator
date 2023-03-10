@@ -57,7 +57,7 @@ jar {
                    'Main-Class': 'com.firebirdcss.tool.duplicate_file_locator.ApplicationMain'
     }
     
-    archiveName 'DuplicateFileLocator.jar'
+    archiveName 'duplicate_file_locator.jar'
 }
 
 publishing {
