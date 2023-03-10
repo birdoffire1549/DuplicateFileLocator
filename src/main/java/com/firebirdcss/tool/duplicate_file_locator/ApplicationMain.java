@@ -289,7 +289,8 @@ public class ApplicationMain {
      */
     private static void reconcileScanPaths() {
         if (Settings.fullScanPaths.isEmpty() && Settings.localScanPaths.isEmpty()) { // Nothing to scan...
-            System.out.println("ERROR: At least one directory must be listed to scan!\n\n");
+            Utilities.clearConsole();
+            System.out.println("\nERROR: At least one directory must be listed to scan!\n\n");
             showHelp(); // <-- Application exit happens in here.
         } else { // Something to scan...
             pruneFullScansThatAreCoveredByMoreInclusiveScans();
@@ -364,7 +365,7 @@ public class ApplicationMain {
      */
     private static void showHelp() {
         String message = 
-            "Usage: java <commandName> [-options]\n" + 
+            "Usage: java -jar <jarName.jar> [-options]\n" + 
             "where options include:\n" + 
             "    -s --scan <dir>           Perform a scan of given directory and all sub-directories.\n" +
             "    -l --local-scan <dir>     Perform a scan of only given directory, no sub-directories.\n" +
