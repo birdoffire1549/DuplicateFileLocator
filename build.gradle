@@ -67,7 +67,7 @@ publishing {
             artifactId = 'DuplicateFileLocator'
             version  = appVersion
             
-            from components.java
+            from files("$buildDir/libs")
         }
     }
     
