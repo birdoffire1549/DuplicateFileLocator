@@ -57,14 +57,14 @@ jar {
                    'Main-Class': 'com.firebirdcss.tool.duplicate_file_locator.ApplicationMain'
     }
     
-    archiveName 'duplicate_file_locator.jar'
+    archiveName 'dflocator.jar'
 }
 
 publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'com.firebirdcss.tool'
-            artifactId = 'DuplicateFileLocator'
+            artifactId = 'dflocator'
          
             from components.java
         }
