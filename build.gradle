@@ -62,7 +62,7 @@ jar {
 
 publishing {
     publications {
-        maven(MavenPublication) {
+        myLibrary(MavenPublication) {
             from layout.buildDirectory.dir("libs")
         }
     }
