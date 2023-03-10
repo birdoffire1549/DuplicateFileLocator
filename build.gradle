@@ -3,6 +3,7 @@
  * ************************* */
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
 
 /* **************************** *
  * Custom variable deffinitions *
@@ -55,4 +56,15 @@ jar {
     }
     
     archiveName 'DuplicateFileLocator.jar'
+}
+
+publishing {
+    maven {
+        name = "GitHubPackages"
+        url = "https://maven.pkg.github.com/birdoffire1549/DuplicateFileLocator"
+        credentials {
+            username = System.getenv("GITHUB_ACTOR")
+            password = System.getenv("GITHUB_TOKEN")
+        }
+    }
 }
