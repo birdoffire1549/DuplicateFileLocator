@@ -1,9 +1,11 @@
 /* ************************* *
  * Gradle Plugin Definitions *
  * ************************* */
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'maven-publish'
+}
 
 /* **************************** *
  * Custom variable deffinitions *
@@ -19,14 +21,14 @@ group = 'com.firebirdcss.tool'
 version = appVersion
 
 sourceSets {
-        main {
-                java.srcDir 'src/main/java'
-                resources.srcDir 'src/main/resources'
-        }
+    main {
+        java.srcDir 'src/main/java'
+        resources.srcDir 'src/main/resources'
+    }
 
-        test {
-                java.srcDir 'src/test/java'
-        }
+    test {
+        java.srcDir 'src/test/java'
+    }
 }
 
 /* ************************************ *
@@ -59,6 +61,12 @@ jar {
 }
 
 publishing {
+    publications {
+        myLibrary(MavenPublication) {
+            from components.java
+        }
+    }
+    
     repositories {
         maven {
             name = "GitHubPackages"
