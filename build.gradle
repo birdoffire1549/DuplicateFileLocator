@@ -67,7 +67,7 @@ publishing {
             artifactId = 'DuplicateFileLocator'
             version  = appVersion
             
-            from files("$buildDir/libs")
+            from "$buildDir/libs"
         }
     }
     
