@@ -10,7 +10,7 @@ plugins {
 /* **************************** *
  * Custom variable deffinitions *
  * **************************** */
-def appVersion = '1.0.0'
+def appVersion = '1.0.2'
 
 /* ****************************** *
  * Application Definition Section *
@@ -45,6 +45,11 @@ dependencies {
 	
 }
 
+task exportVersion {
+    File file = new File("appVersion.dat")
+    file.write version
+}
+
 /* ************************************ *
  * JAR build information goes below...  *
  * ************************************ */
@@ -58,27 +63,4 @@ jar {
     }
     
     archiveName 'dflocator.jar'
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.firebirdcss.tool'
-            artifactId = 'dflocator'
-         
-            from components.java
-        }
-    }
-    
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = "https://maven.pkg.github.com/birdoffire1549/DuplicateFileLocator"
-                    version  = appVersion
-       credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
 }
