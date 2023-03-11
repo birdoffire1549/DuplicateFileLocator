@@ -10,5 +10,6 @@ package com.firebirdcss.tool.duplicate_file_locator.data;
  *
  */
 public enum ScanType {
-    FULL_SCAN, LOCAL_SCAN;
+    FULL_SCAN, 
+    LOCAL_SCAN;
 }
