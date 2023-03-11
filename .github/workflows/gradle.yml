@@ -41,7 +41,7 @@ jobs:
       
     - uses: actions/upload-artifact@v3
       with:
-        name: ${{ steps.split.outputs._1 }}
+        name: dflocator
         path: ./build/libs/
         
     - name: Get Application Version
