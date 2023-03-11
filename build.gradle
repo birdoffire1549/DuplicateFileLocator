@@ -17,6 +17,7 @@ def appVersion = '1.0.2'
  * ****************************** */
 sourceCompatibility = 11
 targetCompatibility = 11
+
 group = 'com.firebirdcss.tool'
 version = appVersion
 
