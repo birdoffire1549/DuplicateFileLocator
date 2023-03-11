@@ -43,7 +43,7 @@ repositories {
  * Dependency information goes below... *
  * ************************************ */
 dependencies {
-	
+    // Placeholder for dependency information.
 }
 
 task exportVersion {
