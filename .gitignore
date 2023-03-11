@@ -1,10 +1,11 @@
 .*
+
 !.gitignore
 !.env
 !.github
+
 ehthumbs.db
 Thumbs.db
-
 nbproject
 composer.lock
 
